@@ -1,0 +1,73 @@
+/*
+Theme Name: Nathalie_Mota
+Theme URI: http://Nathalie_Mota/
+Description: Nathalie_Mota is a startup theme for Advanced user who want to build professional WordPress theme based on Bootstrap
+Version: 0.1
+Tags: blue, black, white, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: Nathalie_Mota
+
+*/
+/**
+ * Table of Contents:
+ *
+ * 1.0 - Basic Structure
+ * 2.0 - Media Queries
+ * ----------------------------------------------------------------------------
+ */
+
+/**
+ * 1.0 Basic Structure
+ * ----------------------------------------------------------------------------
+ */
+
+/********************
+  HTML
+********************/
+
+html {
+  overflow-x: hidden !important;
+  font-size: 16px;
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  overflow-x: hidden !important;
+  font-size: 1rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+}
+h1,
+h2,
+h3,
+a {
+  font-weight: 400;
+}
+p {
+  font-family: "Space Mono", monospace;
+}
+a:hover,
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+
+/**
+ * 2.0 Media Queries
+ * ----------------------------------------------------------------------------
+ */
+
+/* WordPress Media Queries */
+@media (max-width: 600.98px) {
+}
+@media (min-width: 601px) and (max-width: 782.98px) {
+}
+@media (min-width: 783px) {
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (min-width: 575.98px) {
+}
+@media (min-width: 992px) {
+}
