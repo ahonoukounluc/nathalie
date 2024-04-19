@@ -202,6 +202,7 @@ function parseCustomDate(customDate) {
 	return new Date(year, month, day);
 }
 
+
 function toPaginateInitial() {
 	var HZwrapper = 'photo-items'; 
 	var HZlines = 'photos-items'; 
@@ -224,7 +225,6 @@ function toPaginateInitial() {
 		}
 	});
 }
-
 function toPaginate() {
 	var categoryFilter = $("#category-selected").val();
 	var formatFilter = $("#format-selected").val();

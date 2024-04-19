@@ -14,12 +14,12 @@ $forms = get_field( 'contact-forms','option' );
 		</div><!-- #main -->
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
-				<div class="modal-content">
+				<div class="modal-content contact-md">
 					<div class="modal-header">
-						<h1 class="modal-title fs-3" id="exampleModalLabel">Formulaire de contact</h1>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body contact-forms">
+						<img src="<?php echo get_template_directory_uri(); ?>/images/ct-header.png">
 						<?php echo $forms; ?>
 					</div>
 				</div>

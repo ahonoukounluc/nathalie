@@ -68,7 +68,7 @@ $date = get_the_date('Y');
             $wp_querys = new WP_Query($arg);
             if ($wp_querys->have_posts()) : 
           ?>
-          <div class="col-lg-1 offset-lg-5 slick-photos d-none  d-lg-block">
+          <div class="col-lg-1 offset-lg-5 slick-photos d-none d-lg-block">
             <?php while ($wp_querys->have_posts()) : $wp_querys->the_post(); ?>
               <div>
                 <?php the_post_thumbnail(); ?>
@@ -162,12 +162,12 @@ $date = get_the_date('Y');
   </div>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content contact-md">
         <div class="modal-header">
-          <h1 class="modal-title fs-3" id="exampleModalLabel">Formulaire de contact</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body contact-forms">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/ct-header.png">
           <?php echo $forms; ?>
         </div>
       </div>
@@ -178,7 +178,6 @@ wp_reset_postdata(); ?>
  
 </div><!-- #primary -->
 <script>
-
   jQuery(document).ready(function($) {
     var slickphoto = jQuery('.slick-photos');
     slickphoto.slick({
@@ -209,6 +208,22 @@ wp_reset_postdata(); ?>
           }
         }
       ]
+    });
+    $('.slick-next').mouseenter(function() {
+      slickphoto.slick('slickNext');
+    });
+    $('.slick-prev').mouseenter(function() {
+      slickphoto.slick('slickPrev');
+    });
+
+    $('.slick-prev, .slick-next').mouseleave(function() {
+      slickphoto.slick('goTo',  slickphoto.slick('slickCurrentSlide'));
+    });
+    $('.slick-prev, .slick-next').click(function() {
+      var activeIndex =  slickphoto.slick('slickCurrentSlide');
+      var activeSlide = slickphoto.find('.slick-slide').eq(activeIndex);
+      var activeLink = activeSlide.find('a').attr('href');
+      window.location.href = activeLink;
     });
   });
 
