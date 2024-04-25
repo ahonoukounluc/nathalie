@@ -349,9 +349,16 @@ $(document).ready(function () {
   $(document).ready(function($) {
     var image = $('.photo-items');
     image.slickLightbox({
-      src: 'data-src',
-      itemSelector: '.photos-image-hover > .icon-lighbox'
-    });
+		src: 'data-src',
+		itemSelector: '.photos-image-hover > .icon-lighbox',
+	  }).on({
+  'show.slickLightbox': function(){
+  $('.slick-lightbox-slick-item-inner').each(function() {
+  // Append the desired HTML content to each selected div
+  $(this).append('<div class="d-flex justify-content-between" style="color: white;max-width:90%;margin:0 auto"><div>REFERENCE DE LA PHOTO</div><div>CATEGORIE</div></div>');
+  });
+  },
+  });
 		$('.modalcontent a').on('click', function(event) {
 			event.preventDefault();
 			$('#exampleModal').modal('show');
