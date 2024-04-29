@@ -88,6 +88,9 @@ $id = 'photos' . $block['id'];
                   if ( !empty( $terms ) ){
                     $term = array_shift( $terms );
                   }
+                  if ( get_field( 'type-reference',get_the_id()) ){
+                    $ref = get_field( 'type-reference',get_the_id());
+                  }
                   ?>
                   <div class="col-lg-6 mb-4 photos-items" data-categorie="<?php echo implode(",",$all_categorie);?>"  data-format="<?php echo implode(",",$all_format); ?>" data-date="<?php echo $date; ?>">
                     <div class="photos-image-hover">
@@ -95,7 +98,7 @@ $id = 'photos' . $block['id'];
                       <a href="<?php the_permalink(); ?>" class="">
                         <span class="icon-link"><i class="bi bi-eye"></i></span>
                       </a>
-                      <span class="icon-lighbox" data-src="<?php echo $url ?>"><i class="bi bi-fullscreen"></i></span>
+                        <span class="icon-lighbox" data-src="<?php echo $url ?>" data-ref="<?php echo $ref;?>" data-cat="<?php echo $term->name;?>"><i class="bi bi-fullscreen"></i></span>
                       <div class="photo-footer d-flex justify-content-between">
                         <span><?php the_title(); ?></span>
                         <span><?php echo $term->name; ?></span>

@@ -348,21 +348,26 @@ $(document).ready(function () {
   wow.init();
   $(document).ready(function($) {
     var image = $('.photo-items');
+		var pic_data = ajax_object.pic_data;
     image.slickLightbox({
-		src: 'data-src',
-		itemSelector: '.photos-image-hover > .icon-lighbox',
-	  }).on({
-  'show.slickLightbox': function(){
-  $('.slick-lightbox-slick-item-inner').each(function() {
-  // Append the desired HTML content to each selected div
-  $(this).append('<div class="d-flex justify-content-between" style="color: white;max-width:90%;margin:0 auto"><div>REFERENCE DE LA PHOTO</div><div>CATEGORIE</div></div>');
-  });
-  },
-  });
+      src: 'data-src',
+      itemSelector: '.photos-image-hover > .icon-lighbox',
+    }).on({
+			'show.slickLightbox': function(){ 
+				$('.slick-lightbox-slick-item-inner').each(function() {
+					var the_src = $(this).find('img').attr('src');
+						var ref = pic_data[the_src].ref;
+						var cat = pic_data[the_src].cat;
+						$(this).append('<div class="d-flex justify-content-between" style="color: white;max-width:90%;margin:0 auto"><div class="thepicref">'+ ref + '</div><div class="thepiccat">'+ cat +'</div></div>');
+				});
+			 },
+		});
+
 		$('.modalcontent a').on('click', function(event) {
 			event.preventDefault();
 			$('#exampleModal').modal('show');
 	});
+
   });
 } )( jQuery );
 
